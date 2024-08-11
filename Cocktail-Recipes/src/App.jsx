@@ -1,4 +1,4 @@
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, useLocation } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import GinListPage from "./pages/GinListPage";
 import VodkaListPage from "./pages/VodkaListPage";
@@ -7,22 +7,31 @@ import CocktailSearchResult from "./pages/CocktailSearchResult";
 import { useEffect, useState } from "react";
 import FavouriteCocktailPage from "./pages/FavouriteCocktailPage";
 import Random from "./pages/Random";
-import BrowseCategory from "./pages/BrowseCategory"
+import BrowseCategory from "./pages/BrowseCategory";
 
 function App() {
   const [cocktails, setCocktails] = useState({ drinks: [] });
+  const location = useLocation(); //find current location
+  const isHomePage = location.pathname === "/";
+  // checks if route is at homepage
 
   return (
     <>
       <h1>Cocktail Recipes</h1>
       <Navbar />
-      <CocktailSearch setCocktails={setCocktails}/>
+      <CocktailSearch setCocktails={setCocktails} />
       {/* navigation bar */}
-      <h2>Featuring: </h2>
-      <Random />
+      {isHomePage && (
+        <>
+          <h2>Featured Cocktail: </h2>
+          <Random />
+        </>
+      )} 
+      {/* for making the featured cocktain invisible after clicking other links */}
       <Routes>
-        {/* <Route path="/search" element={<CocktailSearch setCocktails={setCocktails}/>} /> */}
-        <Route path="/search-results" element={<CocktailSearchResult cocktails={cocktails}/>} />
+        <Route
+          path="/search-results"
+          element={<CocktailSearchResult cocktails={cocktails} />} />
         <Route path="/gin" element={<GinListPage />} />
         <Route path="/vodka" element={<VodkaListPage />} />
         <Route path="/favourites" element={<FavouriteCocktailPage />} />

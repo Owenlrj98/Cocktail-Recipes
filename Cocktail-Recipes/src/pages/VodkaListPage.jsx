@@ -39,7 +39,6 @@ export default function VodkaListPage() {
         {vodka.drinks.map((vodka) => (
           <li key={vodka.idDrink}>{vodka.strDrink}</li>
         ))}
-        ;
       </div>
     </>
   );

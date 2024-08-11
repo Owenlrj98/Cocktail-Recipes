@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-
-
-async function getDataGin() {
-  const url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin";
+async function getDataTequila() {
+    const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila`; 
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -20,29 +17,31 @@ async function getDataGin() {
   }
 }
 
-export default function GinListPage() {
-  const [gin, setGin] = useState({ drinks: [] }); //reminder: api is an object with drinks array in it
+export default function TequilaListPage() {
+  const [tequila, setTequila] = useState({ drinks: [] }); //reminder: api is an object with drinks array in it
 
   useEffect(() => {
-    const loadGin = async () => {
-      const dataGin = await getDataGin();
-      setGin(dataGin);
+    const loadTequila = async () => {
+      const dataTequila = await getDataTequila();
+      setTequila(dataTequila);
     };
-    loadGin();
+    loadTequila();
   }, []);
 
   return (
     <>
-        <h1>Gin Cocktails</h1>
+        <h1>Tequila Cocktails</h1>
         <Link to="/browse">        
         <button>Back</button>
         </Link>
         <div>
-            {gin.drinks.map((gin) => (
-                <li key={gin.idDrink}>{gin.strDrink}</li>
+            {tequila.drinks.map((tequila) => (
+                <li key={tequila.idDrink}>{tequila.strDrink}</li>
             ))}
         </div>
     </>
   );
 }
 
+  
+  

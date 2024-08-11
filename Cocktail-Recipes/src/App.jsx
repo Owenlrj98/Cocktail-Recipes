@@ -2,6 +2,7 @@ import { Route, Routes, Link, useLocation } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import GinListPage from "./pages/GinListPage";
 import VodkaListPage from "./pages/VodkaListPage";
+import TequilaListPage from "./pages/TequilaListPage";
 import CocktailSearch from "./pages/CocktailSearch";
 import CocktailSearchResult from "./pages/CocktailSearchResult";
 import { useEffect, useState } from "react";
@@ -34,8 +35,8 @@ function App() {
           element={<CocktailSearchResult cocktails={cocktails} />} />
         <Route path="/gin" element={<GinListPage />} />
         <Route path="/vodka" element={<VodkaListPage />} />
+        <Route path="/tequila" element={<TequilaListPage />} />
         <Route path="/favourites" element={<FavouriteCocktailPage />} />
-        {/* <Route path="/random" element={<Random />} /> */}
         <Route path="/browse" element={<BrowseCategory />} />
       </Routes>
     </>

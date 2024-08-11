@@ -1,4 +1,5 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
 //https://reactrouter.com/en/main/hooks/use-location
 
 export default function CocktailSearchResult() {
@@ -6,6 +7,10 @@ export default function CocktailSearchResult() {
   const { cocktails } = location.state || { cocktails: { drinks: [] } };
 
   return (
+    <>
+    <Link to="/search">
+    <button>Back</button>
+    </Link>
     <div>
       <ul>
         {cocktails.drinks && cocktails.drinks.length === 0 ? (
@@ -49,5 +54,6 @@ export default function CocktailSearchResult() {
         )}
       </ul>
     </div>
+    </>
   );
 }

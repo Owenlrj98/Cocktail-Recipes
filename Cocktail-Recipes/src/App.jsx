@@ -16,29 +16,17 @@ function App() {
     <>
       <h1>Cocktail Recipes</h1>
       <Navbar />
+      <CocktailSearch setCocktails={setCocktails}/>
       {/* navigation bar */}
-      {/* <div>
-        <ul>
-          {cocktails.length === 0 ? (
-            <p>No recipes found</p>
-          ) : (
-            cocktails.drinks.map((ct) => (
-              <li key={ct.idDrink}>
-                <h2>{ct.strDrink}</h2>
-                <img src={ct.strDrinkThumb} alt={ct.strDrink} width="200" />
-                <p></p>
-              </li>
-            ))
-          )}
-        </ul>
-      </div> */}
+      <h2>Featuring: </h2>
+      <Random />
       <Routes>
-        <Route path="/search" element={<CocktailSearch setCocktails={setCocktails}/>} />
+        {/* <Route path="/search" element={<CocktailSearch setCocktails={setCocktails}/>} /> */}
         <Route path="/search-results" element={<CocktailSearchResult cocktails={cocktails}/>} />
         <Route path="/gin" element={<GinListPage />} />
         <Route path="/vodka" element={<VodkaListPage />} />
         <Route path="/favourites" element={<FavouriteCocktailPage />} />
-        <Route path="/random" element={<Random />} />
+        {/* <Route path="/random" element={<Random />} /> */}
         <Route path="/browse" element={<BrowseCategory />} />
       </Routes>
     </>

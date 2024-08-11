@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-
-
 async function getDataVodka() {
   const url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka";
   try {
@@ -33,13 +31,16 @@ export default function VodkaListPage() {
 
   return (
     <>
-        <h1>Vodka List</h1>
-        <div>
-            {vodka.drinks.map((vodka) => (
-                <li key={vodka.idDrink}>{vodka.strDrink}</li>
-            ))};
-        </div>
+      <h1>Vodka List</h1>
+      <Link to="/browse">
+        <button>Back</button>
+      </Link>
+      <div>
+        {vodka.drinks.map((vodka) => (
+          <li key={vodka.idDrink}>{vodka.strDrink}</li>
+        ))}
+        ;
+      </div>
     </>
   );
 }
-

@@ -34,6 +34,9 @@ export default function GinListPage() {
   return (
     <>
         <h1>Gin Cocktails</h1>
+        <Link to="/browse">        
+        <button>Back</button>
+        </Link>
         <div>
             {gin.drinks.map((gin) => (
                 <li key={gin.idDrink}>{gin.strDrink}</li>

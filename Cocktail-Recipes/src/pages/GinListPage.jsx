@@ -39,10 +39,11 @@ export default function GinListPage() {
         </Link>
         <div>
             {gin.drinks.map((gin) => (
-                <li key={gin.idDrink}>{gin.strDrink}</li>
+                <li key={gin.idDrink}>
+                  <Link to={`/cocktails/${gin.idDrink}`}>{gin.strDrink}</Link>
+                  </li>
             ))}
         </div>
     </>
   );
 }
-

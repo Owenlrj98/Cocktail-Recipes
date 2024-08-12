@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import CocktailDetails from "./CocktailDetails"
 
 async function getDataTequila() {
-    const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila`; 
+  const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -31,20 +30,17 @@ export default function TequilaListPage() {
 
   return (
     <>
-        <h1>Tequila Cocktails</h1>
-        <Link to="/browse">        
+      <h1>Tequila Cocktails</h1>
+      <Link to="/browse">
         <button>Back</button>
-        </Link>
-        <div>
-            {tequila.drinks.map((tequila) => (
-                <Link to="/id">                
-                    <li key={tequila.idDrink}>{tequila.strDrink}</li>
-                </Link>
-            ))}
-        </div>
+      </Link>
+      <div>
+        {tequila.drinks.map((tequila) => (
+          <li key={tequila.idDrink}>
+            <Link to={`/cocktails/${tequila.idDrink}`}>{tequila.strDrink}</Link>
+          </li>
+        ))}
+      </div>
     </>
   );
 }
-
-  
-  

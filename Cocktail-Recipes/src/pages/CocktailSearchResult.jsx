@@ -44,9 +44,7 @@ export default function CocktailSearchResult() {
                       {ingredient}
                     </li>
                   ) : null;
-                  {
-                    /* otherwise, render nothing */
-                  }
+                  {/* otherwise, render nothing */}
                 })}
                 <button>Add to favourites</button>
 

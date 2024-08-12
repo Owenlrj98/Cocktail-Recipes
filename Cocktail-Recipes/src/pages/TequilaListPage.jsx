@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import CocktailDetails from "./CocktailDetails"
 
 async function getDataTequila() {
     const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila`; 
@@ -36,7 +37,9 @@ export default function TequilaListPage() {
         </Link>
         <div>
             {tequila.drinks.map((tequila) => (
-                <li key={tequila.idDrink}>{tequila.strDrink}</li>
+                <Link to="/id">                
+                    <li key={tequila.idDrink}>{tequila.strDrink}</li>
+                </Link>
             ))}
         </div>
     </>

@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import FavouriteCocktailPage from "./pages/FavouriteCocktailPage";
 import Random from "./pages/Random";
 import BrowseCategory from "./pages/BrowseCategory";
+import CocktailDetails from "./pages/CocktailDetails";
 
 function App() {
   const [cocktails, setCocktails] = useState({ drinks: [] });
@@ -38,6 +39,7 @@ function App() {
         <Route path="/tequila" element={<TequilaListPage />} />
         <Route path="/favourites" element={<FavouriteCocktailPage />} />
         <Route path="/browse" element={<BrowseCategory />} />
+        <Route path="/id" element={<CocktailDetails cocktails={cocktails} />} />
       </Routes>
     </>
   );

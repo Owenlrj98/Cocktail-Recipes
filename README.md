@@ -4,11 +4,11 @@ https://www.thecocktaildb.com/api.php
 
 ## User Stories
 This website serves as a cocktail encyclopedia for users.
-1. At the homepage, the website should display categories by spirit type, which will return a list of cocktails corresponding to the category.
-2. Users should be able to search for cocktails by name, which will return a brief recipe on ingredients and measurement required.
-3. Users should be able to search for cocktails by main spirit, which will return a list of cocktail names.
-4. There should be a component where users can get a random cocktail suggestion from the website.
-5. There should be a component where users can save cocktail recipes as favourite.
+1. At the homepage, the website should have a navigation bar with links to `Home`, `Favourites` and `Browse`, as well as a search bar.
+2. At the homepage, a random cocktail will be featured everytime user visits the homepage.
+3. Users should be able to search for cocktails by name using the search bar, which will return a brief recipe on ingredients and measurement required.
+4. Under `favourites`, there should be a component where users can save cocktail recipes as favourite.
+5. Under `browse`, users will be able to see categories by main spirit type.
 
 
 ## Sample of API routes

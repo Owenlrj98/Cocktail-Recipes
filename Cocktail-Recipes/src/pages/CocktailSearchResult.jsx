@@ -48,6 +48,8 @@ export default function CocktailSearchResult() {
                     /* otherwise, render nothing */
                   }
                 })}
+                <button>Add to favourites</button>
+
               </ul>
             </li>
           ))

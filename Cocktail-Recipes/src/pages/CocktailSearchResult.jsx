@@ -5,6 +5,9 @@ import { Link, useLocation } from "react-router-dom";
 export default function CocktailSearchResult() {
   const location = useLocation();
   const { cocktails } = location.state || { cocktails: { drinks: [] } };
+  // in case some cocktails are undefined, which is why page crash
+  // by right, format should have {drinks: []}
+  const drinks = cocktails?.drinks || [];
 
   return (
     <>
@@ -13,7 +16,7 @@ export default function CocktailSearchResult() {
     </Link>
     <div>
       <ul>
-        {cocktails.drinks && cocktails.drinks.length === 0 ? (
+        {drinks.length === 0 ? (
           <p>No recipes found</p>
         ) : (
           cocktails.drinks.map((ct) => (
@@ -44,7 +47,6 @@ export default function CocktailSearchResult() {
                       {ingredient}
                     </li>
                   ) : null;
-                  {/* otherwise, render nothing */}
                 })}
                 <button>Add to favourites</button>
 

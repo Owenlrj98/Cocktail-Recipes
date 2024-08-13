@@ -14,6 +14,9 @@ import CocktailDetails from "./pages/CocktailDetails";
 function App() {
   const [cocktails, setCocktails] = useState({ drinks: [] });
   const location = useLocation(); //find current location
+  const [formData, setFormData] = useState({
+    name: "",
+  });
   const isHomePage = location.pathname === "/";
   // checks if route is at homepage
 
@@ -29,7 +32,7 @@ function App() {
           <Random />
         </>
       )} 
-      {/* for making the featured cocktain invisible after clicking other links */}
+      {/* for making the featured cocktail invisible after clicking other links */}
       <Routes>
         <Route
           path="/search-results"

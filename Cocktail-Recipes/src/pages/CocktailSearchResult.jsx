@@ -7,7 +7,8 @@ export default function CocktailSearchResult() {
   const { cocktails } = location.state || { cocktails: { drinks: [] } };
   // in case some cocktails are undefined, which is why page crash
   // by right, format should have {drinks: []}
-  const drinks = cocktails?.drinks || [];
+  // keeps giving error that some data are not objects
+  const drinks = cocktails?.drinks || []; //magic
 
   return (
     <>
@@ -19,7 +20,7 @@ export default function CocktailSearchResult() {
         {drinks.length === 0 ? (
           <p>No recipes found</p>
         ) : (
-          cocktails.drinks.map((ct) => (
+          drinks.map((ct) => (
             <li key={ct.idDrink}>
               <h2>{ct.strDrink}</h2>
               <img src={ct.strDrinkThumb} alt={ct.strDrink} width="300" />

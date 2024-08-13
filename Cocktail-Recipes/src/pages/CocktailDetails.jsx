@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { addFavourites } from "../airtable";
+// import { addFavourites } from "../airtable";
 
 async function getCocktailDetails(id) {
     const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
@@ -21,9 +21,9 @@ export default function CocktailDetails() {
   const { id } = useParams();
   const [cocktail, setCocktail] = useState(null);
 
-  const handleAdd = () => {
-    addFavourites();
-  }
+//   const handleAdd = () => {
+//     addFavourites();
+//   }
 
 //   }
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function CocktailDetails() {
             <li key={key}>{cocktail[key]} {cocktail[`strMeasure${key.replace('strIngredient', '')}`]}</li>
           ))}
       </ul>
-      <button onclick={handleAdd}>Add to Favourites</button>
+      <button>Add to Favourites</button>
     </div>
   );
 }

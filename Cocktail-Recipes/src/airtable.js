@@ -26,3 +26,23 @@ const headers = {
 //     console.error(error.message);
 //   }
 // };
+
+  
+
+export const deleteCocktail = async (cocktailId) => {
+    const url = `https://api.airtable.com/v0/appxzEJlWbr8OBPcp/Table%201/${cocktailId}`;
+    try {
+            const response = await fetch(url, {
+            method: "DELETE",
+            headers,
+                });
+                if (!response.ok) {
+                  throw new Error(`Response status: ${response.status}`);
+                }
+            
+                await response.json();
+              } catch (error) {
+                console.error(error.message);
+              }
+            };
+        

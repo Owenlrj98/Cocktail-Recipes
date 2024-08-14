@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
-
-
 
 async function getDataGin() {
   const url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin";

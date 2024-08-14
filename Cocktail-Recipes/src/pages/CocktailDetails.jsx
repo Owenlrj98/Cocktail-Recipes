@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { addCocktail } from "../airtable";
+import { useParams } from "react-router-dom";
+import { addCocktail,  } from "../airtable";
 
 async function getCocktailDetails(id) {
     const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
@@ -21,13 +21,14 @@ export default function CocktailDetails() {
   const { id } = useParams();
   const [cocktail, setCocktail] = useState(null);
 
-  const handleAdd = async (name, instructions, thumb) => {
+  const handleAdd = async (name, thumb, id) => {
     try {
-      await addCocktail(name, instructions, thumb);
+      await addCocktail(name, thumb, id);
   } catch (error) {
       console.error(error.message);
   }
 };
+
   useEffect(() => {
     const loadCocktailDetails = async () => {
       const data = await getCocktailDetails(id);
@@ -54,7 +55,7 @@ export default function CocktailDetails() {
             <li key={key}>{cocktail[key]} {cocktail[`strMeasure${key.replace('strIngredient', '')}`]}</li>
           ))}
       </ul>
-      <button onClick={() => handleAdd(cocktail.strDrink, cocktail.strInstructions, cocktail.strDrinkThumb)}>Add to Favourites</button>
+      <button onClick={() => handleAdd(cocktail.strDrink, cocktail.strDrinkThumb, cocktail.idDrink)}>Add to Favourites</button>
     </div>
   );
 }

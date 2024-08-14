@@ -1,11 +1,11 @@
-import { Route, Routes, Link, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import GinListPage from "./pages/GinListPage";
 import VodkaListPage from "./pages/VodkaListPage";
 import TequilaListPage from "./pages/TequilaListPage";
 import CocktailSearch from "./pages/CocktailSearch";
 import CocktailSearchResult from "./pages/CocktailSearchResult";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FavouriteCocktailPage from "./pages/FavouriteCocktailPage";
 import Random from "./pages/Random";
 import BrowseCategory from "./pages/BrowseCategory";
@@ -14,9 +14,6 @@ import CocktailDetails from "./pages/CocktailDetails";
 function App() {
   const [cocktails, setCocktails] = useState({ drinks: [] });
   const location = useLocation(); //find current location
-  const [formData, setFormData] = useState({
-    name: "",
-  });
   const isHomePage = location.pathname === "/";
   // checks if route is at homepage
 

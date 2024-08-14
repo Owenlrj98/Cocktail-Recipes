@@ -3,6 +3,9 @@ import Navbar from "./components/NavBar";
 import GinListPage from "./pages/GinListPage";
 import VodkaListPage from "./pages/VodkaListPage";
 import TequilaListPage from "./pages/TequilaListPage";
+import RumListPage from "./pages/RumListPage"
+import WhiskeyListPage from "./pages/WhiskeyListPage";
+import BrandyListPage from "./pages/BrandyListPage";
 import CocktailSearch from "./pages/CocktailSearch";
 import CocktailSearchResult from "./pages/CocktailSearchResult";
 import { useState } from "react";
@@ -37,6 +40,9 @@ function App() {
         <Route path="/gin" element={<GinListPage />} />
         <Route path="/vodka" element={<VodkaListPage />} />
         <Route path="/tequila" element={<TequilaListPage />} />
+        <Route path="/rum" element={<RumListPage />} />
+        <Route path="/whiskey" element={<WhiskeyListPage />} />
+        <Route path="/brandy" element={<BrandyListPage />} />
         <Route path="/favourites" element={<FavouriteCocktailPage />} />
         <Route path="/browse" element={<BrowseCategory />} />
         <Route path="/cocktails/:id" element={<CocktailDetails cocktails={cocktails} />} />

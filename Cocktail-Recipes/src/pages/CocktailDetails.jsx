@@ -24,6 +24,7 @@ export default function CocktailDetails() {
   const handleAdd = async (name, thumb, id) => {
     try {
       await addCocktail(name, thumb, id);
+      alert("Cocktail added to favourites")
   } catch (error) {
       console.error(error.message);
   }

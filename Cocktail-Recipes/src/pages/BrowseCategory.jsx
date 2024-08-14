@@ -14,6 +14,15 @@ export default function BrowseCategory() {
         <Link to="/tequila">
           <button>Tequila</button>
         </Link>
+        <Link to="/rum">
+          <button>Rum</button>
+        </Link>
+        <Link to="/whiskey">
+          <button>Whiskey</button>
+        </Link>
+        <Link to="/brandy">
+          <button>Brandy</button>
+        </Link>
       </div>
     </div>
   );

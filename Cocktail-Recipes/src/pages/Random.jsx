@@ -32,16 +32,15 @@ export default function Random() {
       <div>
         <ul>
             {randomCocktail.drinks.map((ct) => (
-              <li key={ct.idDrink}>
-                <h2>{ct.strDrink}</h2>
+              <div key={ct.idDrink}>
+                <h2 >{ct.strDrink}</h2>
                 <img src={ct.strDrinkThumb} alt={ct.strDrink} width="300" />
                 <p>
-                  <strong>Instructions:</strong> {ct.strInstructions}
+                  <strong className="text-warning">Instructions:</strong> {ct.strInstructions}
                 </p>
                 <p>
-                  <strong>Ingredients:</strong>
+                  <strong className="text-warning">Ingredients:</strong>
                 </p>
-                <ul>
                   {/* create array with 15 values as there are 15 values */}
                   {/* loop and transform each value into new array*/}
                   {Array.from({ length: 15 }).map((_, index) => {
@@ -54,17 +53,14 @@ export default function Random() {
                       /* strMeasurement starts from 1 return if ingredient exist (not null) */
                     }
                     return ingredient ? (
-                      <li key={index}>
+                      <div key={index}>
                         {measurement ? `${measurement} ` : ""}
                         {ingredient}
-                      </li>
+                      </div>
                     ) : null;
-                    {
-                      /* otherwise, render nothing */
-                    }
+                    {/* otherwise, render nothing */}
                   })}
-                </ul>
-              </li>
+              </div>
             ))}
         </ul>
       </div>

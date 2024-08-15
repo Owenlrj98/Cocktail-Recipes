@@ -30,17 +30,24 @@ export default function RumListPage() {
 
   return (
     <>
-        <h1>Rum Cocktails</h1>
-        <Link to="/browse">        
+      <h1>Rum Cocktails</h1>
+      <Link to="/browse">
         <button>Back</button>
-        </Link>
-        <div>
-            {rum.drinks.map((rum) => (
-                <li key={rum.idDrink}>
-                  <Link to={`/cocktails/${rum.idDrink}`}>{rum.strDrink}</Link>
-                  </li>
-            ))}
-        </div>
+      </Link>
+      <div>
+        {rum.drinks.map((rum) => (
+          <>
+            <li key={rum.idDrink}>
+              <Link to={`/cocktails/${rum.idDrink}`} className="text-warning">
+                {rum.strDrink}
+              </Link>
+            </li>
+            <Link to={`/cocktails/${rum.idDrink}`}>
+              <img src={rum.strDrinkThumb} alt={rum.strDrink} width="100" />
+            </Link>
+          </>
+        ))}
+      </div>
     </>
   );
 }

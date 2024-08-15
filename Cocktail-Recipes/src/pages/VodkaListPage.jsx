@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 async function getDataVodka() {
@@ -37,9 +36,16 @@ export default function VodkaListPage() {
       </Link>
       <div>
         {vodka.drinks.map((vodka) => (
-          <li key={vodka.idDrink}>
-            <Link to={`/cocktails/${vodka.idDrink}`}>{vodka.strDrink}</Link>
+          <>
+            <li key={vodka.idDrink}>
+              <Link to={`/cocktails/${vodka.idDrink}`} className="text-warning">
+                {vodka.strDrink}
+              </Link>
             </li>
+            <Link to={`/cocktails/${vodka.idDrink}`}>
+              <img src={vodka.strDrinkThumb} alt={vodka.strDrink} width="100" />
+            </Link>
+          </>
         ))}
       </div>
     </>

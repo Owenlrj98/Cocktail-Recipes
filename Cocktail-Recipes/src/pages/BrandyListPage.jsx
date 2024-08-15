@@ -30,17 +30,31 @@ export default function BrandyListPage() {
 
   return (
     <>
-        <h1>Brandy Cocktails</h1>
-        <Link to="/browse">        
+      <h1>Brandy Cocktails</h1>
+      <Link to="/browse">
         <button>Back</button>
-        </Link>
-        <div>
-            {brandy.drinks.map((brandy) => (
-                <li key={brandy.idDrink}>
-                  <Link to={`/cocktails/${brandy.idDrink}`}>{brandy.strDrink}</Link>
-                  </li>
-            ))}
-        </div>
+      </Link>
+      <div>
+        {brandy.drinks.map((brandy) => (
+          <>
+            <li key={brandy.idDrink}>
+              <Link
+                to={`/cocktails/${brandy.idDrink}`}
+                className="text-warning"
+              >
+                {brandy.strDrink}
+              </Link>
+            </li>
+            <Link to={`/cocktails/${brandy.idDrink}`}>
+              <img
+                src={brandy.strDrinkThumb}
+                alt={brandy.strDrink}
+                width="100"
+              />
+            </Link>
+          </>
+        ))}
+      </div>
     </>
   );
 }

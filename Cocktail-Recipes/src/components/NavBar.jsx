@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // bootstrap css files
 import Container from 'react-bootstrap/Container';
@@ -8,9 +8,9 @@ import Navbar from 'react-bootstrap/Navbar';
 
 export default function NavbarComponent() {
   return (
-    <Navbar expand="lg" className="bg-secondary">
+    <Navbar expand="lg" className="custom-navbar">
     <Container>
-      <Navbar.Brand href="#home">Menu</Navbar.Brand>
+      <Navbar.Brand href="/">Menu</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">

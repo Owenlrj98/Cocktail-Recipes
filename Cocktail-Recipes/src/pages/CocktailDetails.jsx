@@ -24,7 +24,6 @@ export default function CocktailDetails() {
   const handleAdd = async (name, thumb, id) => {
     try {
       await addCocktail(name, thumb, id);
-      alert("Cocktail added to favourites")
   } catch (error) {
       console.error(error.message);
   }
@@ -46,9 +45,9 @@ export default function CocktailDetails() {
     <div>
       <h1>{cocktail.strDrink}</h1>
       <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} width="200"/>
-      <p><strong>Category:</strong> {cocktail.strCategory}</p>
-      <p><strong>Instructions:</strong> {cocktail.strInstructions}</p>
-      <h3>Ingredients:</h3>
+      <p><strong className="text-warning">Category:</strong> {cocktail.strCategory}</p>
+      <p><strong className="text-warning">Instructions:</strong> {cocktail.strInstructions}</p>
+      <h3 className="text-warning">Ingredients:</h3>
       <ul>
         {Object.keys(cocktail)
           .filter(key => key.startsWith('strIngredient') && cocktail[key])
@@ -56,7 +55,9 @@ export default function CocktailDetails() {
             <li key={key}>{cocktail[key]} {cocktail[`strMeasure${key.replace('strIngredient', '')}`]}</li>
           ))}
       </ul>
-      <button onClick={() => handleAdd(cocktail.strDrink, cocktail.strDrinkThumb, cocktail.idDrink)}>Add to Favourites</button>
+      <button onClick={() => handleAdd(cocktail.strDrink, cocktail.strDrinkThumb, cocktail.idDrink)}>
+        Add to Favourites
+      </button>
     </div>
   );
 }

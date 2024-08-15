@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 async function getDataWhiskey() {
-  const url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Whiskey";
+  const url =
+    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Whiskey";
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -36,9 +37,23 @@ export default function WhiskeyListPage() {
       </Link>
       <div>
         {whiskey.drinks.map((whiskey) => (
-          <li key={whiskey.idDrink}>
-            <Link to={`/cocktails/${whiskey.idDrink}`}>{whiskey.strDrink}</Link>
+          <>
+            <li key={whiskey.idDrink}>
+              <Link
+                to={`/cocktails/${whiskey.idDrink}`}
+                className="text-warning"
+              >
+                {whiskey.strDrink}
+              </Link>
             </li>
+            <Link to={`/cocktails/${whiskey.idDrink}`}>
+              <img
+                src={whiskey.strDrinkThumb}
+                alt={whiskey.strDrink}
+                width="100"
+              />
+            </Link>
+          </>
         ))}
       </div>
     </>

@@ -33,12 +33,12 @@ export default function CocktailSearch({ setCocktails }) {
     <div className="container mt-4">
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend className="mb-3">Search</legend>
+        {/* <legend className="mb-3">Find a Cocktail</legend> */}
         <label className="form-label">
-          Cocktail Name:
-          <input type="search" name="searchName" className="form-control"/>
+          Find a cocktail:
+          <input type="search" name="searchName" className="form-control" placeholder="Cocktail Name"/>
         </label>
-          <button type="submit" className="btn btn-secondary">Search</button>
+          <button type="submit">Search</button>
       </fieldset>
     </form>
         </div>

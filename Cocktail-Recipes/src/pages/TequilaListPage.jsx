@@ -36,9 +36,23 @@ export default function TequilaListPage() {
       </Link>
       <div>
         {tequila.drinks.map((tequila) => (
-          <li key={tequila.idDrink}>
-            <Link to={`/cocktails/${tequila.idDrink}`}>{tequila.strDrink}</Link>
-          </li>
+          <>
+            <li key={tequila.idDrink}>
+              <Link
+                to={`/cocktails/${tequila.idDrink}`}
+                className="text-warning"
+              >
+                {tequila.strDrink}
+              </Link>
+            </li>
+            <Link to={`/cocktails/${tequila.idDrink}`}>
+              <img
+                src={tequila.strDrinkThumb}
+                alt={tequila.strDrink}
+                width="100"
+              />
+            </Link>
+          </>
         ))}
       </div>
     </>

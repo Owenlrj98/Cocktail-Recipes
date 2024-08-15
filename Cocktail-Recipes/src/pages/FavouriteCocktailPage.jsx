@@ -54,15 +54,15 @@ export default function FavouriteCocktailPage() {
             <p>No recipes found</p>
           ) : (
             favourite.map((ct) => (
-              <li key={ct.id}>
-                <Link to={`/cocktails/${ct.idDrink}`}>
+              <div key={ct.id}>
+                <Link to={`/cocktails/${ct.idDrink}`} className="text-warning">
                   <h2>{ct.strDrink}</h2>
                 </Link>
-                <img src={ct.strDrinkThumb} alt={ct.strDrink} width="300" />
+                <img src={ct.strDrinkThumb} alt={ct.strDrink} width="200" />
                 <button onClick={() => handleDelete(ct.id)}>
-                  Remove from favourites
+                  Remove
                 </button>
-              </li>
+              </div>
             ))
           )}
         </ul>

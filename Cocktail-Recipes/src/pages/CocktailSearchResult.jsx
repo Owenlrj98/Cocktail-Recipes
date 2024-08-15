@@ -22,23 +22,20 @@ export default function CocktailSearchResult() {
 
   return (
     <>
-      <Link to="/search">
-        <button>Back</button>
-      </Link>
       <div>
         <ul>
           {drinks.length === 0 ? (
             <p>No recipes found</p>
           ) : (
             drinks.map((ct) => (
-              <li key={ct.idDrink}>
+              <div key={ct.idDrink}>
                 <h2>{ct.strDrink}</h2>
                 <img src={ct.strDrinkThumb} alt={ct.strDrink} width="300" />
                 <p>
-                  <strong>Instructions:</strong> {ct.strInstructions}
+                  <strong className="text-warning">Instructions:</strong> {ct.strInstructions}
                 </p>
                 <p>
-                  <strong>Ingredients:</strong>
+                  <strong className="text-warning">Ingredients:</strong>
                 </p>
                 <ul>
                   {/* create array with 15 values as there are 15 values */}
@@ -61,7 +58,7 @@ export default function CocktailSearchResult() {
                   })}
                   <button onClick={() => handleAdd(ct.strDrink, ct.strDrinkThumb, ct.idDrink)}>Add to Favourites</button>
                 </ul>
-              </li>
+              </div>
             ))
           )}
         </ul>

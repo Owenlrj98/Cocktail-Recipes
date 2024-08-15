@@ -35,7 +35,9 @@ function App() {
       {/* navigation bar */}
       {isHomePage && (
         <>
-          <h2>Featured Cocktail: </h2>
+        <div className="text-danger">
+          <h2>Featured Cocktail</h2>
+          </div>
           <Random />
         </>
       )} 
@@ -60,3 +62,6 @@ function App() {
 }
 
 export default App;
+
+
+//https://getbootstrap.com/docs/4.0/utilities/colors/

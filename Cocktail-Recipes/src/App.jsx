@@ -1,5 +1,8 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import Navbar from "./components/NavBar";
+import { useState } from "react";
+
+// pages and components
+import NavbarComponent from "./components/NavBar";
 import GinListPage from "./pages/GinListPage";
 import VodkaListPage from "./pages/VodkaListPage";
 import TequilaListPage from "./pages/TequilaListPage";
@@ -8,11 +11,14 @@ import WhiskeyListPage from "./pages/WhiskeyListPage";
 import BrandyListPage from "./pages/BrandyListPage";
 import CocktailSearch from "./pages/CocktailSearch";
 import CocktailSearchResult from "./pages/CocktailSearchResult";
-import { useState } from "react";
 import FavouriteCocktailPage from "./pages/FavouriteCocktailPage";
 import Random from "./pages/Random";
 import BrowseCategory from "./pages/BrowseCategory";
 import CocktailDetails from "./pages/CocktailDetails";
+
+// css
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [cocktails, setCocktails] = useState({ drinks: [] });
@@ -22,8 +28,9 @@ function App() {
 
   return (
     <>
+    <div className="bg-dark w-100 min-vh-100 text-white">
       <h1>Cocktail Recipes</h1>
-      <Navbar />
+      <NavbarComponent />
       <CocktailSearch setCocktails={setCocktails} />
       {/* navigation bar */}
       {isHomePage && (
@@ -47,6 +54,7 @@ function App() {
         <Route path="/browse" element={<BrowseCategory />} />
         <Route path="/cocktails/:id" element={<CocktailDetails cocktails={cocktails} />} />
       </Routes>
+      </div>
     </>
   );
 }

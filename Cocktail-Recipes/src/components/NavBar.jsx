@@ -1,19 +1,26 @@
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+// bootstrap css files
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
+
+export default function NavbarComponent() {
   return (
-    <nav className="navbar">
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/favourites">Favourites</Link>
-        </li>
-        <li>
-            <Link to="/browse">Browse by Spirit Type</Link>
-        </li>
-      </ul>
-    </nav>
-  );
+    <Navbar expand="lg" className="bg-secondary">
+    <Container>
+      <Navbar.Brand href="#home">Menu</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/favourites">Favourites</Nav.Link>
+          <Nav.Link href="/browse">Browse by Spirit Type</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+);
 }
+

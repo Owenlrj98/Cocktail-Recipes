@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 
 //https://www.geeksforgeeks.org/reactjs-usenavigate-hook/
@@ -31,15 +30,15 @@ export default function CocktailSearch({ setCocktails }) {
   };
 
   return (
-    <div>
+    <div className="container mt-4">
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend>Search</legend>
-        <label>
+        <legend className="mb-3">Search</legend>
+        <label className="form-label">
           Cocktail Name:
-          <input type="search" name="searchName" />
+          <input type="search" name="searchName" className="form-control"/>
         </label>
-          <button type="submit">Search</button>
+          <button type="submit" className="btn btn-secondary">Search</button>
       </fieldset>
     </form>
         </div>

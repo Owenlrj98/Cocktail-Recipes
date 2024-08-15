@@ -58,7 +58,6 @@ export default function Random() {
                         {ingredient}
                       </div>
                     ) : null;
-                    {/* otherwise, render nothing */}
                   })}
               </div>
             ))}

@@ -36,15 +36,10 @@ export default function TequilaListPage() {
       </Link>
       <div>
         {tequila.drinks.map((tequila) => (
-          <>
-            <li key={tequila.idDrink}>
-              <Link
-                to={`/cocktails/${tequila.idDrink}`}
-                className="text-warning"
-              >
-                {tequila.strDrink}
-              </Link>
-            </li>
+          <div key={tequila.idDrink}>
+            <Link to={`/cocktails/${tequila.idDrink}`} className="text-warning">
+              <div>{tequila.strDrink}</div>
+            </Link>
             <Link to={`/cocktails/${tequila.idDrink}`}>
               <img
                 src={tequila.strDrinkThumb}
@@ -52,7 +47,7 @@ export default function TequilaListPage() {
                 width="100"
               />
             </Link>
-          </>
+          </div>
         ))}
       </div>
     </>

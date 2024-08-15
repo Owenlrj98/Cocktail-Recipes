@@ -36,16 +36,15 @@ export default function GinListPage() {
       </Link>
       <div>
         {gin.drinks.map((gin) => (
-          <>
-            <li key={gin.idDrink}>
-              <Link to={`/cocktails/${gin.idDrink}`} className="text-warning">
-                {gin.strDrink}
-              </Link>
-            </li>
+          <div key={gin.idDrink}>
+            <Link to={`/cocktails/${gin.idDrink}`} className="text-warning">
+              <div>{gin.strDrink}</div>
+            </Link>
+
             <Link to={`/cocktails/${gin.idDrink}`}>
               <img src={gin.strDrinkThumb} alt={gin.strDrink} width="100" />
             </Link>
-          </>
+          </div>
         ))}
       </div>
     </>

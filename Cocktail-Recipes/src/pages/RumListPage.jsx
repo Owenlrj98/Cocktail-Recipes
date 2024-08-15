@@ -36,16 +36,14 @@ export default function RumListPage() {
       </Link>
       <div>
         {rum.drinks.map((rum) => (
-          <>
-            <li key={rum.idDrink}>
-              <Link to={`/cocktails/${rum.idDrink}`} className="text-warning">
-                {rum.strDrink}
-              </Link>
-            </li>
+          <div key={rum.idDrink}>
+            <Link to={`/cocktails/${rum.idDrink}`} className="text-warning">
+              <div>{rum.strDrink}</div>
+            </Link>
             <Link to={`/cocktails/${rum.idDrink}`}>
               <img src={rum.strDrinkThumb} alt={rum.strDrink} width="100" />
             </Link>
-          </>
+          </div>
         ))}
       </div>
     </>

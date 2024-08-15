@@ -36,16 +36,14 @@ export default function VodkaListPage() {
       </Link>
       <div>
         {vodka.drinks.map((vodka) => (
-          <>
-            <li key={vodka.idDrink}>
-              <Link to={`/cocktails/${vodka.idDrink}`} className="text-warning">
-                {vodka.strDrink}
-              </Link>
-            </li>
+          <div key={vodka.idDrink}>
+            <Link to={`/cocktails/${vodka.idDrink}`} className="text-warning">
+              <div>{vodka.strDrink}</div>
+            </Link>
             <Link to={`/cocktails/${vodka.idDrink}`}>
               <img src={vodka.strDrinkThumb} alt={vodka.strDrink} width="100" />
             </Link>
-          </>
+          </div>
         ))}
       </div>
     </>

@@ -37,15 +37,10 @@ export default function WhiskeyListPage() {
       </Link>
       <div>
         {whiskey.drinks.map((whiskey) => (
-          <>
-            <li key={whiskey.idDrink}>
-              <Link
-                to={`/cocktails/${whiskey.idDrink}`}
-                className="text-warning"
-              >
-                {whiskey.strDrink}
-              </Link>
-            </li>
+          <div key={whiskey.idDrink}>
+            <Link to={`/cocktails/${whiskey.idDrink}`} className="text-warning">
+              <div>{whiskey.strDrink}</div>
+            </Link>
             <Link to={`/cocktails/${whiskey.idDrink}`}>
               <img
                 src={whiskey.strDrinkThumb}
@@ -53,7 +48,7 @@ export default function WhiskeyListPage() {
                 width="100"
               />
             </Link>
-          </>
+          </div>
         ))}
       </div>
     </>

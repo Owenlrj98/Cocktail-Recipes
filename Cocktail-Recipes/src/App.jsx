@@ -36,7 +36,7 @@ function App() {
       {isHomePage && (
         <>
         <div className="text-danger">
-          <h2>Featured Cocktail</h2>
+          <h1>Featured Cocktail</h1>
           </div>
           <Random />
         </>
